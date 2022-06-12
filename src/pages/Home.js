@@ -4,7 +4,7 @@ import {View, Text} from 'react-native';
 // EXPORTAÇÃO POR DEFAULT OU SEM DEFAULT
 export function Home(){
     
-    const nome = "Gustavo";
+    const nome = "Gusta";
 
     // ESTILIZAÇÃO INLINE, RETURN COMO COMPONENTE JSX, PASSANDO PROPRIEDADES AOS COMPONENTES
     return(
