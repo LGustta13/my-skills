@@ -129,16 +129,21 @@ Para o segundo caso, deve-se criar o seguinte arquivo de configuração `tsconfi
 
 <br>
 
-<div id='Emulador'>
-	
+<div id='Emulador'/>
+
 ## Configurando os emuladores
-	
+
 Como mencionado, deve-se abrir [dois terminais](#Saber): um para executar o Metro Bundler e outro para executar a aplicação. 
 
 Para que a aplicação rode no emulador, deve-se configurar no [Android Studio](https://react-native.rocketseat.dev/android/emulador) anteriormente, e para rodar no [dispositivo físico](https://react-native.rocketseat.dev/usb/android) (Android ou IOS), deve-se configurar o mesmo. 
 
-Para funcionar corretamente, o Metro Bundler deve estar sempre rodando, ou se não o Android ou IOS não reconhecem o JSX. Assim que os emuladores ou dispositivos estiverem em execução, digitando o comandoadb devices _adb devices_ no prompt de comando é possível visualizar quais dispositivos estão conectados (inserir o diretório _%ANDROID_HOME%\platform-tools_ nas variáveis de ambiente do Windows em _Path_ para funcionar)
+Para funcionar corretamente, o Metro Bundler deve estar sempre rodando, ou se não o Android ou IOS não reconhecem o JSX. Assim que os emuladores ou dispositivos estiverem em execução, digitando o seguinte comando e adicionando o diretório nas variáveis de ambiente do Windows em Path é possível visualizar quais dispositivos estão conectados
 
+	adb devices
+	
+	_%ANDROID_HOME%\platform-tools_
+
+<br>
 
 <div id='Apk'/>
 
