@@ -17,14 +17,30 @@ import {
 import { Button } from '../components/Button';
 import { SkillCard } from '../components/SkillCard';
 
+interface SkillData {
+  id: string;
+  name: string;
+  date?: Date;
+} // Representação de dados
+
 export function Home(){
+
   const [newSkill, setNewSkill] = useState('');
-  const [mySkills, setMySkills] = useState([]);
+  const [mySkills, setMySkills] = useState<SkillData[]>([]);
   const [greetings, setGreetings] = useState('');
 
   function handleAddNewSkill(){
-    setMySkills([...mySkills, newSkill]);
+    const data = {
+      id: String(new Date().getTime()),
+      name: newSkill
+    }
+
+    setMySkills([...mySkills, data]);
   };
+
+  function handleRemoveSkill(id : string){
+    setMySkills(oldState => oldState.filter(skill => skill.id !== id));
+  }
 
   // Função executada assim que a dependência é modificada useEffect(() => {}, [])
   // Carrega sempre uma vez n o início da interface
@@ -62,18 +78,25 @@ export function Home(){
         onChangeText={setNewSkill} // onChangeText={text => setnewSkill(text)}
       />
 
-      <Button onPress={handleAddNewSkill}/>
+      <Button 
+        title="Adicionar"
+        onPress={handleAddNewSkill}
+      />
 
       <Text style={[styles.title, {marginVertical:30}]}>
         Minhas skills
       </Text>
 
       <FlatList
+        showsVerticalScrollIndicator={false}
         style={styles.scroll}
         data={mySkills}
-        keyExtractor={skill => skill}
+        keyExtractor={skill => skill.id}
         renderItem={(skill) => (
-          <SkillCard skill={skill.item}/>
+          <SkillCard 
+            skill={skill.item.name}
+            onPress={() => handleRemoveSkill(skill.item.id)}
+          />
         )}
       />
 
