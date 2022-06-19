@@ -13,8 +13,6 @@
   </p>
 </p>
 
-<br>
-
 <p align="center">
 	<sub>
 		<i>A documentação a seguir será postada em Inglês em breve!</i>
@@ -27,9 +25,8 @@
 
 - [INICIALIZANDO O PROJETO PELO REACT NATIVE](#Inicio)
 - [O QUE SABER ANTES DE COMEÇAR?](#Saber)
-- [ESTRUTURA DA PASTA DO PROJETO](#Estrutura)
+- [ESTRUTURA DE PASTAS DO PROJETO](#Estrutura)
 - [TYPESCRIPT](#Type)
-- [EXECUÇÃO NOS EMULADORES](#Emulador)
 - [GERANDO APK](#Apk)
 - [FUNCIONAMENTO DA APLICAÇÃO](#Funcionamento)
 
@@ -67,49 +64,137 @@ Para rodar a aplicação no dispositivo físico ou emulador
 	yarn android
 	yarn ios
 
-O React Native utiliza componentes nativos ao invés de componentes web. Portanto, no cabeçalho de cada arquivo .tsx importa-se o React para poder utilizar o JSX, além também de outros componentes como View e Text. Algo comum é a criação constante de vários componentes simples ou funcionais que são customizados por diferentes parâmetros.
-
-Se necessário modificar algum componente em resposta à alguma ação, deve-se ter conhecimento de estados. Diferente de propriedades, são variáveis controladas internamente pelo componente utilizando o conceito de hooks, justamente porque o JavaScript não é muito intuitivo com classes, e sim com programação funcional (- classes, + funções, [exemplo aqui](https://reactnative.dev/docs/tutorial)).
-
 <br>
 
 <div id='Estrutura'/>
 
-## Estrutura da pasta do projeto
+## Estrutura de pastas do projeto
 
-- _tests_: Pasta com arquivo de configuração para a aplicação de testes, utiliza-se da ferramenta jest. 
-- .vscode: apresenta informações de configuração do ambiente de desenvolvimento, neste caso o vsCode.
-- android: todo o projeto desenvolvido pelo react native é apresentado nativamente na pasta android para o dispositivo em questão. Observa-se a criação da pasta java, assim como o manifesto com as configurações.
-- ios: os arquivos também são gerados nativamente para ios, conforme visto ao android.
-- node_modules: como o node.js é usado no backend para o projeto, suas dependências e pacotes se encontram dentro desta pasta. Por padrão já são instaladas algumas bibliotecas do ecossistema React.
-- buckconfig: é um sistema de compilação (build) criado pelo Facebook para aprimorar o desempenho no desenvolvimento multiplataforma, pode ser comparado ao gradle no Java.
-- .eslintrc.js: arquivo de configuração para uma ferramenta chamada ESLINT, no qual é gerado para realizar uma varredura no código para buscar algo fora do padrão (code Style), como por exemplo o airbnb. Há um comando no package.json onde excuta-se o lint para a varredura. 
-- .flowconfig: é um verificador de tipagem para o JavaScript. Para melhores configurações deve-se adicionar os arquivos prettier e eslint.
-- .prettierrc.js: Arquivo configurado para lidar com formatação e estilo de código dentro de algum padrão.  Enquanto o Eslint encontra os erros, o prettier executa a correção.
-- .watchmanconfig: é configurado para sempre ficar observando as mudanças que são feitas no código e gravá-las, antes de aplicar a tal mudança.
-- App.tsx: arquivo principal com os componentes em JSX que rodarão na aplicação.
-- app.json: apresenta informações relacionadas a aplicação, como o nome do projeto
-- babel.config.js: o babel é um compilador Javascript que converte códigos em ECMAScript em uma versão compatível do JS para o browser ou ambientes atuais e antigos. O Babel pode converter sintaxes em JSX, conforme este exemplo.
-- index.js: arquivo que registra qual interface deve abrir primeiramente na aplicação (por padrão abre-se o App.js)
-- metro.config.js: realiza o empacotamento do JavaScript para ser interpretado pelo Jscore e transformado em código tanto para Android quanto para IOS. Foca principalmente no fast refresh e no bundle (empacotamento) para o React Native
-- package.json:  Arquivo criado pelo NPM com configurações relacionadas as dependências de desenvolvimento, de produção e scripts de inicialização. Principalmente, ele lista todas as dependências necessárias e suas versões para desenvolver a aplicação.
-- yarn.lock: basicamente registra todas as dependências que o projeto necessita quando as instalações forem realizadas pelo yarn CLI, sendo assim necessário além do package.json.
-- Gemfile: formato de arquivo que descreve as dependências necessárias para executar um código em Ruby
-- components: onde todos os componentes serão criados e alocados para uso dentro da aplicação.
-- screens: contêm todas as páginas da aplicação, é separada com o nome da página na pasta, direcionando para um arquivo index.js e seu próprio arquivo de estilização (style.js).
+- **android**: todo o projeto desenvolvido pelo react native é apresentado nativamente na pasta android para o dispositivo em questão.
+- **ios**: os arquivos também são gerados nativamente para ios, conforme visto ao android.
+- **buckconfig**: é um sistema de compilação (build) para aprimorar o desempenho no desenvolvimento multiplataforma.
+- **.eslintrc.js**: é gerado para realizar uma varredura no código para buscar algo fora do padrão (code Style)
+- **.flowconfig**: é um verificador de tipagem para o JavaScript.
+- **.prettierrc.js**: lida com formatação e estilo de código dentro de algum padrão. Enquanto o Eslint encontra os erros, o prettier executa a correção.
+- **.watchmanconfig**: é configurado para sempre ficar observando as mudanças que são feitas no código e gravá-las antes de aplicar a tal mudança.
+- **App.tsx**: arquivo principal com os componentes em JSX que rodarão na aplicação.
+- **app.json**: apresenta informações relacionadas a aplicação.
+- **babel.config.js**: é um compilador Javascript que converte códigos em ECMAScript em uma versão compatível do JS para o browser ou ambientes atuais e antigos.
+- **index.js: arquivo que registra qual interface deve abrir primeiramente na aplicação (por padrão abre-se o App.js)
+- **metro.config.js**: realiza o empacotamento do JavaScript para ser interpretado pelo Jscore e transformado em código tanto para Android quanto para IOS.
+- **package.json**:  Arquivo criado pelo NPM com configurações relacionadas as dependências de desenvolvimento, de produção e scripts de inicialização.
+- **yarn.lock**: registra todas as dependências que o projeto necessita quando as instalações forem realizadas pelo yarn CLI.
+- **components**: onde todos os componentes serão criados e alocados para uso dentro da aplicação.
+- **pages**: contêm todas as páginas da aplicação.
 
+<br>
 
 <div id='Type'/>
 
 ## TypeScript
 
-<div id='Emulador'/>
+O [TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html) é um superset de tipagem para o JavaScript, podendo ser usado em componentes e objetos. Não é muito intuitivo mas em grandes proporções é um facilitador para não se perder no projeto por conta de tipagem.
 
-## Execução nos Emuladores
+Configurando o TypeScript em um projeto React Native do zero
+
+	npx react-native init <MyApp> --template react-native-template-typescript
+	
+Configurando o TypeScript em um projeto React Native em andamento
+
+	yarn add -D typescript @types/react @types/react-native
+
+Para o segundo caso, deve-se criar o seguinte arquivo de configuração `tsconfig.json`
+
+	{
+  		"compilerOptions": {
+			    "allowJs": true,
+			    "allowSyntheticDefaultImports": true,
+			    "esModuleInterop": true,
+			    "isolatedModules": true,
+			    "jsx": "react-native",
+			    "lib": ["es2017"],
+			    "moduleResolution": "node",
+			    "noEmit": true,
+			    "strict": true,
+			    "target": "esnext"
+  		},
+		"exclude": [
+			    "node_modules",
+			    "babel.config.js",
+			    "metro.config.js",
+			    "jest.config.js"
+  		]
+	}
+
+<br>
 
 <div id='Apk'/>
 
 ## Gerando APK
+
+Segundo a [documentação do React Native](https://reactnative.dev/docs/signed-apk-android), deve-se ter conhecimento de que o sitema Android obriga qua a aplicação tenha uma assinatura digital com um certificado, permitindo sua instalação no dispositivo. Para a PlayStore é necessário uma chave de lançamento (release), no qual também é utilizada para atualizações futuras, mas não vem ao caso por enquanto.
+
+<p align="center">
+  <img src="https://developer.android.com/studio/images/publish/appsigning_googleplayappsigningdiagram_2x.png?hl=pt-br" height="180">
+</p>
+
+Seguir os seguintes passos para gerar uma chave de assinatura no Windows:
+
+Utilizar a _keytool_ no CMD
+
+	cd C:\Program Files\Java\jdkx.x.x_x\bin
+	keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+
+Colocar a chave no diretório do prórpio projeto
+
+	cd android/app
+	
+Editar o arquivo _gradle.properties_ adicionando
+
+	cd android/gradle.properties
+	
+	MYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+	MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+	MYAPP_UPLOAD_STORE_PASSWORD=*****
+	MYAPP_UPLOAD_KEY_PASSWORD=*****
+	
+Editar o arquivo _build.gradle_ adicionando
+
+	cd android/app/build.gradle
+	
+	...
+	android {
+	    ...
+	    defaultConfig { ... }
+	    signingConfigs {
+		release {
+		    if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+			storeFile file(MYAPP_UPLOAD_STORE_FILE)
+			storePassword MYAPP_UPLOAD_STORE_PASSWORD
+			keyAlias MYAPP_UPLOAD_KEY_ALIAS
+			keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+		    }
+		}
+	    }
+	    buildTypes {
+		release {
+		    ...
+		    signingConfig signingConfigs.release
+		}
+	    }
+	}
+	...
+
+Executar o comando para empacotar a aplicação
+
+	cd android
+	gradlew bundleRelease
+
+Executar o comando na raiz do projeto para gerar a APK
+
+	npx react-native run-android --variant=release
+	
+<br>
 
 <div id='Funcionamento'/>
 
