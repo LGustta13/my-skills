@@ -231,7 +231,3 @@ Executar o comando na raiz do projeto para gerar a APK
 	npx react-native run-android --variant=release
 	
 <br>
-
-<div id='Funcionamento'/>
-
-## Funcionamento da aplicação
