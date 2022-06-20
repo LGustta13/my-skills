@@ -41,6 +41,7 @@
   <img src="images/Home.jpg" height="500">
   <img src="images/Add skill.jpg" height="500">
   <img src="images/Delete skill.jpg" height="500">
+  <img src="images/Skill list.jpg" height="500">
 </p>
 
 <br>
