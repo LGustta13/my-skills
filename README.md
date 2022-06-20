@@ -23,13 +23,25 @@
 
 ## Sumário
 
+- [FUNCIONAMENTO DA APLICAÇÃO](#Funcionamento)
 - [INICIALIZANDO O PROJETO PELO REACT NATIVE](#Inicio)
 - [O QUE SABER ANTES DE COMEÇAR?](#Saber)
 - [ESTRUTURA DE PASTAS DO PROJETO](#Estrutura)
 - [TYPESCRIPT](#Type)
 - [CONFIGURANDO OS EMULADORES](#Emulador)
 - [GERANDO APK](#Apk)
-- [FUNCIONAMENTO DA APLICAÇÃO](#Funcionamento)
+
+<br>
+
+<div id='Funcionamento'>
+	
+## Funcionamento da aplicação
+	
+<p align="center">
+  <img src="images/Home.jpg" height="500">
+  <img src="images/Add skill.jpg" height="500">
+  <img src="images/Delete skill.jpg" height="500">
+</p>
 
 <div id='Inicio'/>
 
@@ -81,7 +93,7 @@ Para rodar a aplicação no dispositivo físico ou emulador
 - **App.tsx**: arquivo principal com os componentes em JSX que rodarão na aplicação.
 - **app.json**: apresenta informações relacionadas a aplicação.
 - **babel.config.js**: é um compilador Javascript que converte códigos em ECMAScript em uma versão compatível do JS para o browser ou ambientes atuais e antigos.
-- **index.js: arquivo que registra qual interface deve abrir primeiramente na aplicação (por padrão abre-se o App.js)
+- **index.js**: arquivo que registra qual interface deve abrir primeiramente na aplicação (por padrão abre-se o App.js)
 - **metro.config.js**: realiza o empacotamento do JavaScript para ser interpretado pelo Jscore e transformado em código tanto para Android quanto para IOS.
 - **package.json**:  Arquivo criado pelo NPM com configurações relacionadas as dependências de desenvolvimento, de produção e scripts de inicialização.
 - **yarn.lock**: registra todas as dependências que o projeto necessita quando as instalações forem realizadas pelo yarn CLI.
