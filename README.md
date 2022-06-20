@@ -33,7 +33,7 @@
 
 <br>
 
-<div id='Funcionamento'>
+<div id='Funcionamento'/>
 	
 ## Funcionamento da aplicação
 	
@@ -42,6 +42,10 @@
   <img src="images/Add skill.jpg" height="500">
   <img src="images/Delete skill.jpg" height="500">
 </p>
+
+Basicamente, a aplicação registra qualquer texto que for inserido no campo _Insira aqui a skill_, pensado de forma que qualquer pessoa possa inserir habilidades estudadas, ou mesmo criar cards, e a aplicação salva estas informações. Por enquanto é possível inserir cards e deletar, porém novas features já estão a caminho!
+
+<br>
 
 <div id='Inicio'/>
 
