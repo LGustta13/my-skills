@@ -10,6 +10,9 @@
     <a href="https://www.linkedin.com/in/luis-gusta-oliveira/">
     	<img src="https://img.shields.io/badge/-My_Linkedin-blue" alt="sobre" />
     </a>
+    <a href="https://web.dio.me/users/LGustta13">
+    	<img src="https://img.shields.io/badge/-My%20DIO%20Profile-blue" alt="sobre" />
+    </a>
   </p>
 </p>
 
