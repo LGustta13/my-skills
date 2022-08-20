@@ -57,8 +57,6 @@ Basicamente, a aplicação registra qualquer texto que for inserido no campo _In
 
 ## Inicializando o projeto pelo React Native
 
-O React Js é um framework baseado em JavaScript que facilita o desenvolvimento de interfaces para aplicações web e dispositivos móveis, de forma escalonável (dividido em etapas e níveis), onde a renderização do código é mais rápida, leve e menor, uma vez que o .jsx (JS e XML) realiza esse procedimento. 
-
 O [React Native](https://reactnative.dev/docs/tutorial) é um framework React criado pelo Facebook e direcionado para dispositivos móveis tanto para interfaces nativas Android ou IOS. 
 
 Seguindo as recomendações de preparação do ambiente de desenvolvimento pela [Rocketseat](https://react-native.rocketseat.dev/), instalar ou atualizar: 
@@ -86,6 +84,10 @@ Para rodar a aplicação no dispositivo físico ou emulador
 
 	yarn android
 	yarn ios
+	
+Caso este projeta seja clonado, executar para baixar todas as dependências
+
+    yarn
 
 <br>
 
