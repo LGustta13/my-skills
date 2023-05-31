@@ -234,5 +234,6 @@ Executar o comando para empacotar a aplicação
 Executar o comando na raiz do projeto para gerar a APK
 
 	npx react-native run-android --variant=release
-	
+
+Com a release no seu dispositivo móvel, basta somente abrir e utilizar a aplicação! 💜
 <br>
